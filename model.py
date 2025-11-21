@@ -57,6 +57,6 @@ class CompresSAE(nn.Module):
         losses = self.compute_loss_dict(batch)
         optimizer.zero_grad()
         losses["Loss"].backward()
-        self.normalize_decoder()
         optimizer.step()
+        self.normalize_decoder()
         return losses
